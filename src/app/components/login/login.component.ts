@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
       this.warningMessage = true;
       setTimeout(() => { this.warningMessage = false }, 4000); 
     } else {
-      alert(1);
       this.loading = true;
       this.service.loginSubmit(this.credentials.Username, this.credentials.Password)
       .subscribe(
