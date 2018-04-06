@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "4864972d-c92e-43b0-bbb7-f2e72904059c",
+		"name": "Laravel-Angular-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "vgrady@example.net",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "*",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "HqbNzgjbp2nTlGhPTCsra2VqUjCtfxfyhrPgWfU1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/sathiyaraj/laravel/angular-laravel-services/public/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"sathiyaraj",
+						"laravel",
+						"angular-laravel-services",
+						"public",
+						"oauth",
+						"token"
+					]
+				},
+				"description": "Login - API"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todo List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjQ2NmJiODk5N2Y4MTNkZmIyMTg4M2EzM2VkZjBhZjJiNmU4ZjhkZjZjZDM1M2EwMWVjOTg0MWRjYjdjMmQxMzdhMDc4NTJmOWFiYmQ4NzkyIn0.eyJhdWQiOiIyIiwianRpIjoiNDY2YmI4OTk3ZjgxM2RmYjIxODgzYTMzZWRmMGFmMmI2ZThmOGRmNmNkMzUzYTAxZWM5ODQxZGNiN2MyZDEzN2EwNzg1MmY5YWJiZDg3OTIiLCJpYXQiOjE1MjI5MjQxNTcsIm5iZiI6MTUyMjkyNDE1NywiZXhwIjoxNTU0NDYwMTU3LCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.XI6nlVyKh9a6E_RRdPIjKqjHqD7eYpxxNH_2PND34xulh_HFkt7EIj9J3wtSuTiZmmrCr1J9I5aTtLVMpGL6NDuWdjFOR5Y5QZ5JKyR8xOU6OcJUkStAwiYo2Z1ixsOSqcOCwapIXvdugOESwGhARTS7AOw7bAhYElrsh_XbCB56YCOZg0JIvUenYgpIv_ifMGxc_PRWJ5WMrPXWZpAqh_NZvnJxEaWKUytPvLOypjoYlUymcTJY2p6tGOQvGiKl1K5aFUWiVpqADL1q6cubtg71IMVOFBrG5vS3rzJHccExPYT5lzbIto9nrGk9n0bLKP9FclP65yjGTLvraXIgjDLP7enCS9MIFI9dSbgaIZ3DvO-kuaeEtP7oKD_9K-wmuNaIGEilc7cCNmU0QTeF20QrQ1j1IlfeGAvwnZGWivulWy1wjK6qHmwL8ezY2HRc5rubH8YUMk7wwPtQ0leo5dFwbCL_rVaVnYHOowv5sUBiBX2Z91IfwQiJI0havHcZEin7_g3ldkwXI4YhUZ7f0ubpIdhb7y_QsLNJI1PUT1PLZkNa3Gf_o1eDeaGEzBTI0tCUkhjiYdDKKtV3UeKpTDeeyUsPAXFBMF1v2WxGH13XF_yLNrdMavWshH6P_s5qDEMqkOykqPmzRlX25ewqmoGgZHs3ERy_xi0pa0dDAS4"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/sathiyaraj/laravel/angular-laravel-services/public/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"sathiyaraj",
+						"laravel",
+						"angular-laravel-services",
+						"public",
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjQ2NmJiODk5N2Y4MTNkZmIyMTg4M2EzM2VkZjBhZjJiNmU4ZjhkZjZjZDM1M2EwMWVjOTg0MWRjYjdjMmQxMzdhMDc4NTJmOWFiYmQ4NzkyIn0.eyJhdWQiOiIyIiwianRpIjoiNDY2YmI4OTk3ZjgxM2RmYjIxODgzYTMzZWRmMGFmMmI2ZThmOGRmNmNkMzUzYTAxZWM5ODQxZGNiN2MyZDEzN2EwNzg1MmY5YWJiZDg3OTIiLCJpYXQiOjE1MjI5MjQxNTcsIm5iZiI6MTUyMjkyNDE1NywiZXhwIjoxNTU0NDYwMTU3LCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.XI6nlVyKh9a6E_RRdPIjKqjHqD7eYpxxNH_2PND34xulh_HFkt7EIj9J3wtSuTiZmmrCr1J9I5aTtLVMpGL6NDuWdjFOR5Y5QZ5JKyR8xOU6OcJUkStAwiYo2Z1ixsOSqcOCwapIXvdugOESwGhARTS7AOw7bAhYElrsh_XbCB56YCOZg0JIvUenYgpIv_ifMGxc_PRWJ5WMrPXWZpAqh_NZvnJxEaWKUytPvLOypjoYlUymcTJY2p6tGOQvGiKl1K5aFUWiVpqADL1q6cubtg71IMVOFBrG5vS3rzJHccExPYT5lzbIto9nrGk9n0bLKP9FclP65yjGTLvraXIgjDLP7enCS9MIFI9dSbgaIZ3DvO-kuaeEtP7oKD_9K-wmuNaIGEilc7cCNmU0QTeF20QrQ1j1IlfeGAvwnZGWivulWy1wjK6qHmwL8ezY2HRc5rubH8YUMk7wwPtQ0leo5dFwbCL_rVaVnYHOowv5sUBiBX2Z91IfwQiJI0havHcZEin7_g3ldkwXI4YhUZ7f0ubpIdhb7y_QsLNJI1PUT1PLZkNa3Gf_o1eDeaGEzBTI0tCUkhjiYdDKKtV3UeKpTDeeyUsPAXFBMF1v2WxGH13XF_yLNrdMavWshH6P_s5qDEMqkOykqPmzRlX25ewqmoGgZHs3ERy_xi0pa0dDAS4"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/sathiyaraj/laravel/angular-laravel-services/public/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"sathiyaraj",
+						"laravel",
+						"angular-laravel-services",
+						"public",
+						"api",
+						"users"
+					]
+				},
+				"description": "Get all users"
+			},
+			"response": []
+		}
+	]
+}
