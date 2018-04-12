@@ -5,36 +5,63 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class AuthService {
 
-  authUrl: string = 'http://localhost/sathiyaraj/laravel/angular-laravel-services/public/oauth/token/';
-
   loggedIn: boolean = true;
   
   constructor(private http : Http) {
     this.loggedIn = !!localStorage.getItem('access_token');
-   }
+  }
 
-   isLoggedin() {
-     return this.loggedIn;
-   }
+  isLoggedIn() {
+    return this.loggedIn;
+  }
 
-   loginSubmit(Username: string, Password: string): Observable<any> {
-     let headers = new Headers( { 'Content-type' : 'application/json'});
-     let options = new RequestOptions({ headers: headers});
+  private oauthUrl = "http://localhost/sathiyaraj/laravel/angular-laravel-services/public/oauth/token";  
 
-     return this.http.post(this.authUrl + 'oauth/token/', JSON.stringify({'username' : Username, 'password': Password}), options)
-     .map(res => res.json())
-     .do(res => {
-       if(res.Status == 'Success') {
-         localStorage.setItem('access_token', res.access_token);
-         
-       }
-     });
-     //.catch(this.handleError);
-   }
+  loginSubmit(Username: string, Password: string): Observable<any> {
+     
+    var headers = new Headers({
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }); 
 
-   logout() {
-     localStorage.removeItem('access_token');
-     this.loggedIn = false;
-   }
+    let postData = {
+      grant_type: "password",
+      client_id: 2,
+      client_secret: "HqbNzgjbp2nTlGhPTCsra2VqUjCtfxfyhrPgWfU1",
+      username: Username,
+      password: Password,
+      scope: ""
+    }
+
+    return this.http.post(this.oauthUrl, JSON.stringify(postData), {
+      headers: headers
+    })
+    .map((res: Response) => res.json())
+    .do(res => {      
+      if (res.access_token) {        
+        localStorage.setItem('access_token', res.access_token);
+      }
+    })
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  logout() {
+    localStorage.removeItem('access_token');
+    this.loggedIn = false;
+  }
+
+  private handleError(err) {
+    let errMessage: string;
+
+    if (err instanceof Response) {
+      let body = err.json() || '';
+      let error = body.error || JSON.stringify(body);
+      errMessage = `${err.status} - ${err.statusText || ''} ${error}`;
+    } else {
+      errMessage = err.message ? err.message : err.toString();
+    }
+
+    return Observable.throw(errMessage);
+  }
 
 }

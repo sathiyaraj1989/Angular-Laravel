@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       this.service.loginSubmit(this.credentials.Username, this.credentials.Password)
       .subscribe(
-        data => {
-          if(data.Status == 'Success') {
+        data => {          
+          if(data.access_token) {
             this.service.loggedIn = true;
             this.router.navigate(['dashboard']);
           } else {
